@@ -285,7 +285,7 @@ static NSString * AWSCognitoAuthAsfDeviceId = @"asf.device.id";
            withPresentingViewController:(UIViewController *)presentingViewController{
     self.svc = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:url] entersReaderIfAvailable:NO];
     self.svc.delegate = self;
-    self.svc.modalPresentationStyle = UIModalPresentationPopover;
+    self.svc.modalPresentationStyle = UIModalPresentationOverFullScreen/*UIModalPresentationPopover*/;
     self.isProcessingSignIn = YES;
     dispatch_async(dispatch_get_main_queue(), ^{
         __block UIViewController * sourceVC = presentingViewController;
@@ -497,7 +497,7 @@ static NSString * AWSCognitoAuthAsfDeviceId = @"asf.device.id";
                       url:(NSString *)url {
     self.svc = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:url] entersReaderIfAvailable:NO];
     self.svc.delegate = self;
-    self.svc.modalPresentationStyle = UIModalPresentationPopover;
+    self.svc.modalPresentationStyle = UIModalPresentationOverFullScreen/*UIModalPresentationPopover*/;
     self.isProcessingSignOut = YES;
     dispatch_async(dispatch_get_main_queue(), ^{
         [self setPopoverSource:self.svc source:vc];
